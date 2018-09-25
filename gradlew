@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-${TRAVIS_PULL_REQUEST:-${TRAVIS_PULL_REQUEST:-default}}
-
 ##############################################################################
 ##
 ##  Gradle start up script for UN*X
