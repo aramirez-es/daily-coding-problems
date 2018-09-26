@@ -6,19 +6,19 @@ class FirstMissingPositiveInteger {
   int execute(int[] input) {
     Arrays.sort(input);
 
-    int firstMissingInteger;
-    int possibleMissingInteger = 0;
+    int firstMissingInteger = 1;
     int index = 0;
 
-    while (index < input.length - 1 && possibleMissingInteger < 2) {
-      possibleMissingInteger = input[index+1] - input[index];
+    while (index < input.length - 1 && firstMissingInteger == 1) {
+      int possibleMissingInteger = input[index + 1] - input[index];
+      if (input[index] > 0 && possibleMissingInteger > 1) {
+        firstMissingInteger = possibleMissingInteger;
+      }
       index++;
     }
 
-    if (possibleMissingInteger < 2) {
+    if (firstMissingInteger == 1 && input[index] > 0) {
       firstMissingInteger = input[index] + 1;
-    } else {
-      firstMissingInteger = possibleMissingInteger;
     }
 
     return firstMissingInteger;

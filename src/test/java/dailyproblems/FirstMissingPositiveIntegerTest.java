@@ -43,4 +43,12 @@ public class FirstMissingPositiveIntegerTest {
 
     assertThat(new FirstMissingPositiveInteger().execute(input)).isEqualTo(expectedMissingPositiveInteger);
   }
+
+  @Test
+  public void it_should_find_first_missing_positive_given_an_array_with_all_negative_numbers() {
+    int [] input = {-3, -4, -2, -2};
+    int expectedMissingPositiveInteger = 1;
+
+    assertThat(new FirstMissingPositiveInteger().execute(input)).isEqualTo(expectedMissingPositiveInteger);
+  }
 }
