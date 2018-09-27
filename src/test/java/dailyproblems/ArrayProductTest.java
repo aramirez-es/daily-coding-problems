@@ -18,6 +18,7 @@ public class ArrayProductTest {
     int [] expectedOutput = {2, 3, 6};
     assertThat(new ArrayProduct().execute(numbers)).isEqualTo(expectedOutput);
   }
+
   @Test
   public void it_should_multiply_big_arrays() {
     int [] numbers = {1, 2, 3, 4, 5};
