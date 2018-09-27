@@ -1,17 +1,26 @@
 package dailyproblems;
 
+import java.util.Arrays;
+
 class AddUpToK {
   boolean execute(int[] numbers, int k) {
 
     boolean found = false;
-    int index = 0;
+    int low = 0;
+    int high = numbers.length -1;
 
-    while (!found && index < numbers.length) {
-      for (int j = index + 1; j < numbers.length && !found; j++) {
-        found = numbers[index] + numbers[j] == k;
-      }
-      index++;
+    Arrays.sort(numbers);
+    while (!found && low < high){
+        int possiblePar = numbers[low] + numbers[high];
+        found = possiblePar == k;
+
+        if (possiblePar > k) {
+          high--;
+        } else if (possiblePar < k) {
+          low++;
+        }
     }
+
 
     return found;
   }
