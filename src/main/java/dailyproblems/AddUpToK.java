@@ -1,24 +1,20 @@
 package dailyproblems;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 class AddUpToK {
   boolean execute(int[] numbers, int k) {
+    Map<Integer, Integer> map = new HashMap<>();
 
     boolean found = false;
-    int low = 0;
-    int high = numbers.length -1;
+    int i = 0;
 
-    Arrays.sort(numbers);
-    while (!found && low < high){
-        int possiblePar = numbers[low] + numbers[high];
-        found = possiblePar == k;
-
-        if (possiblePar > k) {
-          high--;
-        } else if (possiblePar < k) {
-          low++;
-        }
+    while (!found && i < numbers.length) {
+      found = map.containsKey(k - numbers[i]);
+      // Value is not relevant since we try to know if difference (stored in the key) is present in constant time.
+      map.put(numbers[i], null);
+      i++;
     }
 
 
