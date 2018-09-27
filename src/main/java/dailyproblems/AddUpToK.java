@@ -3,6 +3,9 @@ package dailyproblems;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * DOC: http://www.techiedelight.com/find-pair-with-given-sum-array/
+ */
 class AddUpToK {
   boolean execute(int[] numbers, int k) {
     Map<Integer, Integer> map = new HashMap<>();
