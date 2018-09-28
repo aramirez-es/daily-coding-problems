@@ -20,7 +20,6 @@ class AddUpToK {
       i++;
     }
 
-
     return found;
   }
 }
