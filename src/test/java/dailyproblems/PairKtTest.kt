@@ -23,7 +23,7 @@ class PairKtTest {
     }
 
     @Test
-    internal fun it_should_return_the_las_element() {
+    internal fun it_should_return_the_last_element() {
         assertEquals(4, cdr(cons(3, 4)))
         assertEquals(3, cdr(cons(4, 3)))
     }
